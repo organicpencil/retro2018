@@ -24,9 +24,4 @@ func _physics_process(delta):
 
 	steering = lerp(steering, steer * STEER, STEER_WEIGHT)
 
-	engine_force = 200.0
-
-	# Vertical stabilizer
-	var local_rot = transform.basis.xform(rotation)
-	print(local_rot[2])
-	#add_torque(transform.basis.xform_inv(Vector3(0, 0, -local_rot[2] * 50.0)))
+	engine_force = 150.0
