@@ -10,13 +10,24 @@ func _ready():
 
 func _handle_respawn():
 	$ColorRect/AnimationPlayer.play("respawn")
-	$Lives.text = "Sweet rides: %d" % Global.lives
+	if Global.lives == 4:
+		$Lives/life5.modulate = Color(1,0,0)
+	if Global.lives == 3:
+		$Lives/life4.modulate = Color(1,0,0)
+	if Global.lives == 2:
+		$Lives/life3.modulate = Color(1,0,0)
+	if Global.lives == 1:
+		$Lives/life2.modulate = Color(1,0,0)
+	if Global.lives == 0:
+		$Lives/life1.modulate = Color(1,0,0)
+
+
 
 func _handle_win():
 	$Status.text = "winnar"
 
 func _handle_lose():
-	$Status.text = "lews"
+	$Status.text = "PROGRAM OVERWRITE-GAME OVER"
 
 func _process(delta):
 	$Speed.text = "%.0f" % Global.speed

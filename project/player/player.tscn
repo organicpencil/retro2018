@@ -4,6 +4,8 @@
 [ext_resource path="res://player/player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
+
+margin = 0.04
 radius = 0.8
 height = 4.2
 
@@ -12,6 +14,9 @@ contacts_reported = 5
 contact_monitor = true
 angular_damp = 0.98
 script = ExtResource( 2 )
+
+[node name="body" parent="." index="0"]
+transform = Transform( -1, 0, -9.6489e-008, 0, 1, 0, 9.6489e-008, 0, -1, -2.32072e-010, 0.641594, -0.313784 )
 
 [node name="back" parent="." index="1"]
 use_as_traction = true
@@ -29,4 +34,5 @@ suspension_stiffness = 10.0
 [node name="CollisionShape" type="CollisionShape" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15607, 0.166474 )
 shape = SubResource( 1 )
+disabled = false
 
