@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc/free_timer.gd" type="Script" id=1]
+
+[node name="FreeTimer" type="Timer"]
+wait_time = 20.0
+one_shot = true
+autostart = true
+script = ExtResource( 1 )
+
