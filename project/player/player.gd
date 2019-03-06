@@ -12,7 +12,9 @@ const TRANSFORM_SAMPLE_INTERVAL = 1.0
 const TRANSFORM_SAMPLE_LIMIT = 2
 
 func _ready():
+	set_meta("player", true)
 	connect("body_entered", self, "_handle_body_entered")
+	Global.connect("lose", self, "_handle_lose")
 
 	transforms = [Transform(global_transform.basis, global_transform.origin)]
 	var transform_sampler = Timer.new()
@@ -38,6 +40,9 @@ func _handle_body_entered(body):
 
 		# Trigger hud and other logic
 		Global.respawn()
+
+func _handle_lose():
+	queue_free()
 
 func _sample_position():
 	transforms.push_back(Transform(global_transform.basis, global_transform.origin))
