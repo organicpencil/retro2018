@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1980s-soviet-synthpop-ukraine.wav-6652232a787dec2755e3da837c4de183.sample"
+
+[deps]
+
+source_file="res://menu/1980s-soviet-synthpop-ukraine.wav"
+dest_files=[ "res://.import/1980s-soviet-synthpop-ukraine.wav-6652232a787dec2755e3da837c4de183.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
