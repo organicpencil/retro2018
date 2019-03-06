@@ -7,3 +7,6 @@ func _ready():
 
 func _handle_respawn():
 	$ColorRect/AnimationPlayer.play("respawn")
+
+func _process(delta):
+	$SpeedLabel.text = "%.0f" % Global.speed

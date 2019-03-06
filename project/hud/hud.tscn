@@ -32,3 +32,10 @@ color = Color( 0, 0, 0, 0 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 anims/respawn = SubResource( 1 )
 
+[node name="SpeedLabel" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 22.0
+rect_scale = Vector2( 4, 4 )
+

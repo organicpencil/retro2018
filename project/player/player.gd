@@ -45,6 +45,8 @@ func _sample_position():
 		transforms.pop_front()
 
 func _physics_process(delta):
+	Global.speed = abs(global_transform.basis.xform_inv(linear_velocity)[2])
+
 	var steer = 0.0
 	if Input.is_action_pressed("left"):
 		steer += 1.0
