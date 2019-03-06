@@ -30,4 +30,7 @@ func _handle_lose():
 	$Status.text = "PROGRAM OVERWRITE-GAME OVER"
 
 func _process(delta):
-	$Speed.text = "%.0f" % Global.speed
+	$TextureProgress/Speed.text = "%.0f" % Global.speed
+	$TextureProgress/speedometer/pointer.rect_rotation = Global.speed - 90
+	if Global.speed - 90 >= 90:
+		$TextureProgress/speedometer/pointer.rect_rotation = 90

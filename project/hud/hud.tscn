@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://hud/hud.gd" type="Script" id=1]
-[ext_resource path="res://hud/font/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://hud/bikeicon.png" type="Texture" id=3]
+[ext_resource path="res://hud/bikeicon.png" type="Texture" id=2]
+[ext_resource path="res://hud/font/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://hud/back-01.png" type="Texture" id=4]
 [ext_resource path="res://hud/line-01.png" type="Texture" id=5]
 [ext_resource path="res://hud/fill-01.png" type="Texture" id=6]
+[ext_resource path="res://hud/speedometer-01-01.png" type="Texture" id=7]
+[ext_resource path="res://hud/pointer.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -26,46 +28,46 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=2]
-
-hinting = 2
-font_path = "res://hud/font/VCR_OSD_MONO_1.001.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-
-size = 70
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 28
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 
 size = 50
 outline_size = 0
 outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 
 size = 26
 outline_size = 0
 outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFontData" id=4]
+
+hinting = 2
+font_path = "res://hud/font/VCR_OSD_MONO_1.001.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 70
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 28
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
 
 [node name="HUD" type="Control"]
 anchor_left = 0.0
@@ -103,48 +105,6 @@ playback_speed = 1.0
 anims/respawn = SubResource( 1 )
 blend_times = [  ]
 
-[node name="Speed" type="Label" parent="."]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 10.0
-margin_top = -31.0
-margin_right = -984.0
-margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label" type="Label" parent="Speed"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 6.0
-margin_top = 3.0
-margin_right = 54.0
-margin_bottom = 28.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
-text = "kmh"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="Lives" type="Label" parent="."]
 editor/display_folded = true
 anchor_left = 0.0
@@ -179,7 +139,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
@@ -197,7 +157,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
@@ -215,7 +175,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
@@ -233,7 +193,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
@@ -251,7 +211,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
@@ -272,7 +232,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -296,7 +256,7 @@ min_value = 0.0
 max_value = 100.0
 step = 1.0
 page = 0.0
-value = 71.0
+value = 61.0
 exp_edit = false
 rounded = false
 allow_greater = false
@@ -325,8 +285,92 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 text = "SAVING... 72%"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="speedometer" type="TextureRect" parent="TextureProgress"]
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -246.0
+margin_right = -4.0
+margin_bottom = -22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 0
+
+[node name="pointer" type="TextureRect" parent="TextureProgress/speedometer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1.0
+margin_top = -91.0
+margin_right = 3.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1, 0.7 )
+rect_pivot_offset = Vector2( 2, 142 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 0
+
+[node name="Speed" type="Label" parent="TextureProgress"]
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -81.0
+margin_top = -229.0
+margin_right = 2.0
+margin_bottom = -167.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="TextureProgress/Speed"]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 23.0
+margin_top = 1.0
+margin_right = 71.0
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 6 )
+text = "kmh"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
