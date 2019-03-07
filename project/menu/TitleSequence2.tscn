@@ -5,7 +5,7 @@
 [ext_resource path="res://menu/Displace.tscn" type="PackedScene" id=3]
 [ext_resource path="res://menu/1980s-soviet-synthpop-ukraine.wav" type="AudioStream" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 25
 outline_size = 0
@@ -14,7 +14,7 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 25
 outline_size = 0
@@ -53,7 +53,6 @@ size_flags_vertical = 1
 color = Color( 0.0627451, 0.0705882, 0.0666667, 1 )
 
 [node name="Label" type="Label" parent="."]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -68,7 +67,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "
 
 
@@ -100,7 +99,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "UTOPIA.EXE IS CORRUPTED..."
 percent_visible = 1.0
 lines_skipped = 0
@@ -121,9 +120,9 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "TO SAVE YOUR CURRENT PROGRESS PRESS “ ENTER “..."
-percent_visible = 1.0
+percent_visible = 0.0
 lines_skipped = 0
 max_lines_visible = -1
 
@@ -142,7 +141,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "SAVING ---------- error"
 percent_visible = 1.0
 lines_skipped = 0
@@ -163,7 +162,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "AUTOMATIC SAVE HAS CRASHED"
 percent_visible = 1.0
 lines_skipped = 0
@@ -184,7 +183,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "INITIATING MANUAL SAVE IN 3… 2… 1…"
 percent_visible = 1.0
 lines_skipped = 0
@@ -205,7 +204,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "GET TO THE NEXT SAVING POINT BEFORE UTOPIA GETS OVERWRITE"
 percent_visible = 1.0
 lines_skipped = 0

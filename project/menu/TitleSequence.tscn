@@ -5,7 +5,7 @@
 [ext_resource path="res://menu/Displace.tscn" type="PackedScene" id=3]
 [ext_resource path="res://menu/1980s-soviet-synthpop-ukraine.wav" type="AudioStream" id=4]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 
 resource_name = "GAME START"
 length = 6.0
@@ -60,7 +60,7 @@ tracks/3/keys = {
 "values": [ -20.0, -10.0, -30.0 ]
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 size = 28
 outline_size = 0
@@ -87,7 +87,7 @@ autoplay = "GAME START"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/GAME START" = SubResource( 6 )
+"anims/GAME START" = SubResource( 1 )
 blend_times = [  ]
 
 [node name="background" type="ColorRect" parent="."]
@@ -117,7 +117,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "PRESS ENTER"
 align = 1
 percent_visible = 1.0
