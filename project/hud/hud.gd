@@ -34,3 +34,6 @@ func _process(delta):
 	$TextureProgress/speedometer/pointer.rect_rotation = Global.speed - 90
 	if Global.speed - 90 >= 90:
 		$TextureProgress/speedometer/pointer.rect_rotation = 90
+
+	$TextureProgress.value = Global.progress
+	$TextureProgress/Label.text = "SAVING... %d%%" % Global.progress

@@ -5,6 +5,7 @@ enum {GAME_RUNNING, GAME_WON, GAME_LOST}
 var game_state = GAME_RUNNING
 var speed = 0.0
 var lives = 5
+var progress = 0
 
 signal respawn
 signal win

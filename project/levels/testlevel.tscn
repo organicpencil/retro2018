@@ -9,139 +9,55 @@
 [ext_resource path="res://obstacles/box2.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Environment" id=1]
-
 background_mode = 1
-background_sky_custom_fov = 0.0
 background_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
 background_energy = 0.0
-background_canvas_max_layer = 0
-ambient_light_color = Color( 0, 0, 0, 1 )
 ambient_light_energy = 0.0
-ambient_light_sky_contribution = 1.0
-fog_enabled = false
 fog_color = Color( 1, 0.439216, 0, 1 )
 fog_sun_color = Color( 1, 0, 0, 1 )
 fog_sun_amount = 0.31
-fog_depth_enabled = true
-fog_depth_begin = 10.0
-fog_depth_curve = 1.0
-fog_transmit_enabled = false
-fog_transmit_curve = 1.0
-fog_height_enabled = false
-fog_height_min = 0.0
-fog_height_max = 100.0
-fog_height_curve = 1.0
-tonemap_mode = 0
-tonemap_exposure = 1.0
-tonemap_white = 1.0
-auto_exposure_enabled = false
-auto_exposure_scale = 0.4
-auto_exposure_min_luma = 0.05
-auto_exposure_max_luma = 8.0
-auto_exposure_speed = 0.5
-ss_reflections_enabled = false
-ss_reflections_max_steps = 64
-ss_reflections_fade_in = 0.15
-ss_reflections_fade_out = 2.0
-ss_reflections_depth_tolerance = 0.2
-ss_reflections_roughness = true
-ssao_enabled = false
 ssao_radius = 0.1
-ssao_intensity = 1.0
-ssao_radius2 = 0.0
-ssao_intensity2 = 1.0
-ssao_bias = 0.01
-ssao_light_affect = 0.0
-ssao_ao_channel_affect = 0.0
-ssao_color = Color( 0, 0, 0, 1 )
-ssao_quality = 0
-ssao_blur = 3
-ssao_edge_sharpness = 4.0
-dof_blur_far_enabled = false
 dof_blur_far_distance = 1.49
 dof_blur_far_transition = 0.85
-dof_blur_far_amount = 0.1
-dof_blur_far_quality = 1
-dof_blur_near_enabled = false
-dof_blur_near_distance = 2.0
-dof_blur_near_transition = 1.0
-dof_blur_near_amount = 0.1
-dof_blur_near_quality = 1
 glow_enabled = true
-glow_levels/1 = false
-glow_levels/2 = false
-glow_levels/3 = true
-glow_levels/4 = false
-glow_levels/5 = true
-glow_levels/6 = false
-glow_levels/7 = false
 glow_intensity = 1.0
 glow_strength = 0.7
 glow_bloom = 0.1
 glow_blend_mode = 0
-glow_hdr_threshold = 1.0
-glow_hdr_scale = 2.0
-glow_bicubic_upscale = false
-adjustment_enabled = false
-adjustment_brightness = 1.0
-adjustment_contrast = 1.0
-adjustment_saturation = 1.0
 
 [sub_resource type="PlaneShape" id=2]
 
-margin = 0.04
-plane = Plane( 0, 1, 0, 0 )
-
 [sub_resource type="PlaneMesh" id=3]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-flip_faces = false
 size = Vector2( 25, 4000 )
-subdivide_width = 0
-subdivide_depth = 0
 
 [sub_resource type="VisualShaderNodeInput" id=4]
-
 output_port_for_preview = 0
 input_name = "uv"
 
 [sub_resource type="VisualShaderNodeTexture" id=5]
-
 output_port_for_preview = 0
-source = 0
 texture = ExtResource( 5 )
 texture_type = 2
 
 [sub_resource type="VisualShaderNodeColorConstant" id=6]
-
 output_port_for_preview = 0
 constant = Color( 0, 0, 0, 0 )
 
 [sub_resource type="VisualShaderNodeVectorOp" id=7]
-
 output_port_for_preview = 0
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 100, 1 ) ]
 operator = 2
 
 [sub_resource type="VisualShaderNodeColorOp" id=8]
-
-output_port_for_preview = -1
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ) ]
-operator = 0
 
 [sub_resource type="VisualShaderNodeInput" id=9]
-
 output_port_for_preview = 0
 input_name = "time"
 
 [sub_resource type="VisualShaderNodeScalarFunc" id=10]
 
-output_port_for_preview = -1
-default_input_values = [ 0, 0.0 ]
-function = 13
-
 [sub_resource type="VisualShader" id=11]
-
 code = "shader_type spatial;
 uniform sampler2D tex_frg_3 : hint_normal;
 
@@ -198,22 +114,6 @@ void light() {
 }
 "
 graph_offset = Vector2( -25, 58 )
-mode = 0
-modes/blend = 0
-modes/cull = 0
-modes/depth_draw = 0
-modes/diffuse = 0
-modes/specular = 0
-flags/ambient_light_disabled = false
-flags/depth_test_disable = false
-flags/ensure_correct_normals = false
-flags/shadows_disabled = false
-flags/skip_vertex_transform = false
-flags/unshaded = false
-flags/vertex_lighting = false
-flags/world_vertex_coords = false
-nodes/vertex/0/position = Vector2( 400, 150 )
-nodes/vertex/connections = PoolIntArray(  )
 nodes/fragment/0/position = Vector2( 780, 40 )
 nodes/fragment/2/node = SubResource( 4 )
 nodes/fragment/2/position = Vector2( 0, 100 )
@@ -230,12 +130,8 @@ nodes/fragment/8/position = Vector2( 340, 460 )
 nodes/fragment/9/node = SubResource( 10 )
 nodes/fragment/9/position = Vector2( 505, 384 )
 nodes/fragment/connections = PoolIntArray( 4, 0, 3, 1, 2, 0, 5, 0, 3, 0, 0, 1, 5, 0, 3, 0, 3, 0, 6, 0, 6, 0, 0, 5, 8, 0, 9, 0, 9, 0, 6, 1 )
-nodes/light/0/position = Vector2( 400, 150 )
-nodes/light/connections = PoolIntArray(  )
 
 [sub_resource type="ShaderMaterial" id=12]
-
-render_priority = 0
 shader = SubResource( 11 )
 
 [node name="Node" type="Node"]
@@ -247,58 +143,22 @@ environment = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+win_area = NodePath("../WinArea")
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 3 )]
 player = NodePath("../Player")
 
 [node name="WinArea" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -358 )
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
 
 [node name="Ground" type="StaticBody" parent="."]
 editor/display_folded = true
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 shape = SubResource( 2 )
-disabled = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 12 )
 
 [node name="Obstacles" type="Node" parent="."]
