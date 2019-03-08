@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/speedometer-01-01.png-04f16c76008cd9b239a83b982fade47e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
