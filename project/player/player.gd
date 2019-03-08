@@ -11,7 +11,13 @@ var transforms = []
 const TRANSFORM_SAMPLE_INTERVAL = 1.0
 const TRANSFORM_SAMPLE_LIMIT = 2
 
+export(NodePath) var win_area
+var start_dist = 0.0
+
 func _ready():
+	assert(win_area != null)
+	win_area = get_node(win_area)
+
 	set_meta("player", true)
 	connect("body_entered", self, "_handle_body_entered")
 	Global.connect("lose", self, "_handle_lose")
@@ -23,6 +29,9 @@ func _ready():
 	transform_sampler.connect("timeout", self, "_sample_position")
 	add_child(transform_sampler)
 	transform_sampler.start()
+
+	# Used to calculate completion progress
+	start_dist = global_transform.origin.distance_to(win_area.global_transform.origin)
 
 func _handle_body_entered(body):
 	if body.has_meta("obstacle"):
@@ -72,3 +81,10 @@ func _physics_process(delta):
 	steering = lerp(steering, steer * STEER, STEER_WEIGHT)
 
 	engine_force = 150.0
+
+	# Update distance to win
+	if global_transform.origin.z < win_area.global_transform.origin.z:
+		Global.progress = 100
+	else:
+		var dist = global_transform.origin.distance_to(win_area.global_transform.origin)
+		Global.progress = int((1.0 - min(dist / start_dist, 1.0)) * 100)
