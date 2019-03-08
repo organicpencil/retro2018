@@ -377,4 +377,5 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Displace" parent="." instance=ExtResource( 9 )]
+visible = false
 
